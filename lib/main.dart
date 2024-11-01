@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_3d_controller/flutter_3d_controller.dart';
-import 'package:model_viewer_plus/model_viewer_plus.dart';
+import 'package:flutter_3d_model_view/utils/utils.dart';
 
 import 'generated/assets.dart';
 
@@ -36,14 +36,42 @@ class HomePage extends StatelessWidget {
         title: const Text("Flutter 3D Model View"),
         centerTitle: true,
       ),
-      body: SizedBox(
-          height: MediaQuery.of(context).size.height * 0.8,
-          child: const Flutter3DViewer(
-            src: Assets.threeDUn,
-            //     src: "https://models.readyplayer.me/670cd125aaa8b6f7ebb57da7.glb",
-            activeGestureInterceptor: false,
-
-          )),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 80,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: Utils.category.length,
+                itemBuilder: (context, index) {
+                  final category = Utils.category;
+                  return GestureDetector(
+                    onTap: (){debugPrint(category[index].title);},
+                    child: Container(
+                      margin: const EdgeInsets.all(10),
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Center(
+                          child: Text(
+                        category[index].title,
+                        style: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.w500),
+                      )),
+                    ),
+                  );
+                }),
+          ),
+          SizedBox(
+              height: MediaQuery.of(context).size.height * 0.6,
+              child: const Flutter3DViewer(
+                src: Assets.threeDUn,
+                //     src: "https://models.readyplayer.me/670cd125aaa8b6f7ebb57da7.glb",
+                activeGestureInterceptor: false,
+              )),
+        ],
+      ),
     );
   }
 }
