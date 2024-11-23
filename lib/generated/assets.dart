@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String audioBattleOfFantasia = 'assets/audio/battle-of-fantasia.mp3';
   static const String threeDDamagedHelmet = 'assets/threeD/DamagedHelmet.glb';
   static const String threeDHuman = 'assets/threeD/human.glb';
   static const String threeDSub = 'assets/threeD/sub.glb';
