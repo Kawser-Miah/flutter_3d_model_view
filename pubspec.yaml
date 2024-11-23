@@ -38,6 +38,7 @@ dependencies:
   flutter_3d_controller: ^2.0.2
   flutter_bloc: ^8.1.6
   freezed_annotation: ^2.4.4
+  audioplayers: ^6.1.0
 
 
 dev_dependencies:
@@ -96,4 +97,5 @@ flutter:
   # see https://flutter.dev/to/font-from-package
   assets:
     - assets/threeD/
+    - assets/audio/
 
