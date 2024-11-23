@@ -13,6 +13,7 @@ class Utils{
     CategoryModel(id: 0, title: "Human", assets: Assets.threeDHuman),
     CategoryModel(id: 1, title: "Helmet", assets: Assets.threeDDamagedHelmet),
     CategoryModel(id: 2, title: "SubSan", assets: Assets.threeDSub),
-    CategoryModel(id: 3, title: "Man", assets: Assets.threeDUn)
+    CategoryModel(id: 3, title: "Man", assets: Assets.threeDUn),
+    CategoryModel(id: 3, title: "Astronaut", assets: 'https://modelviewer.dev/shared-assets/models/Astronaut.glb')
   ];
 }
