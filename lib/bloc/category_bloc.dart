@@ -9,7 +9,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
   CategoryBloc() : super(const CategoryState.initial()) {
     on<Started>((event, emit) async{
       emit(CategoryLoadingState());
-      await Future.delayed(Duration(milliseconds: 100), () {
+      await Future.delayed(Duration(milliseconds: 50), () {
         emit(CategoryLoadedState(category: event.category));
       });
     });
